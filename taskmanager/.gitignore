@@ -1,0 +1,21 @@
+
+# Django database
+db.sqlite3
+
+
+# Virtual environment
+virtual/
+
+
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+
+#env
+.env
+
+#history
+.history/
+

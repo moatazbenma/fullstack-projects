@@ -1,0 +1,22 @@
+{% extends "tasks/base.html" %}
+{% block title %}{% endblock title %}
+
+
+
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>{{ form.instance.pk | yesno:"Edit Task, Add Task"}}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Save</button>
+    </form>
+</div><br>
+<a href="{% url 'task-list' %}" class="back">Back to tasks</a>
+
+
+{% endblock content %}

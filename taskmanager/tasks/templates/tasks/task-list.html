@@ -1,0 +1,60 @@
+{% extends "tasks/base.html" %}
+{% block title %}Task List{% endblock title %}
+
+
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<h2>Task List</h2><br><BR>
+    
+<div class="priority-legend">
+    <span class="legend-item high"></span> High Priority
+    <span class="legend-item medium"></span> Medium Priority
+    <span class="legend-item low"></span> Low Priority
+</div>
+<br>
+
+<a href="{% url "task-create" %}" class="addtask">+ Add New Task</a>
+
+<br><br><br>
+<form method="get" style="margin-bottom: 20px;">
+  <label for="priority">Filter by priority: </label>
+  <select name="priority" id="priority" onchange="this.form.submit()">
+    <option value="">All</option>
+    <option value="high" {% if selected_priority == "high" %}selected{% endif %}>High</option>
+    <option value="medium" {% if selected_priority == "medium" %}selected{% endif %}>Medium</option>
+    <option value="low" {% if selected_priority == "low" %}selected{% endif %}>Low</option>
+  </select>
+</form>
+
+
+
+
+
+
+{% for task in tasks %}
+ <ul>
+        
+            <li class="{% if task.priority == 'high' %}high{% elif task.priority == 'medium' %}medium{% else %}low{% endif %}">
+            <strong>{{ task.title }}</strong>
+
+            {% if task.completed%}
+                <em>(completed)</em>
+            {% endif %}
+            <br>
+            <p> Due date: {{task.due_date | default:"No due date"}} </p>
+            <br>
+            <a href="{% url "task-edit" task.pk %}"><button class="icon-btn edit" title="Edit">✏️</button></a>
+            <a href="{% url "task-delete" task.pk%}"><button class="icon-btn delete" title="Delete">🗑️</button></a>
+
+    
+        <br>
+    </ul>
+
+{% endfor %}
+
+
+{% endblock content %}
+
+
+

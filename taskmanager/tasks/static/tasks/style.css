@@ -13,7 +13,7 @@ body{
 
 nav{
     background-color: #ffffff;
-    color: white;
+    color: #000000;
     padding: 15px 30px;
     display: flex;
     justify-content: flex-end;
@@ -335,3 +335,55 @@ select {
     background-color: #E1306C;
     color: rgb(255, 255, 255);
 }
+
+
+.logo{
+    margin-right: auto;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
+
+.nav-links {
+  display: flex; /* Enable flexbox for layout control */
+  align-items: center; /* Vertically align items */
+  /* Add other styling for your navigation bar */
+}
+
+.user-info {
+  font-size: 16px;
+  margin-left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 100px) {
+  .user-info {
+    margin-left: 20px;
+    font-size: 14px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+}
+
+
+
+.username{
+    color: #4caf50;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .duedate{
+        font-size: 12px;
+        margin-left: 7px;
+    }
+
+}
+
+

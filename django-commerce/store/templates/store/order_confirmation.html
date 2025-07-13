@@ -1,0 +1,14 @@
+{% extends "store/base.html" %}
+
+
+{% block content %}
+<div class="container-fluid my-5">
+    <div class="card p-5 shadow-sm">
+        <h2 class="mb-3 text-success">Thank You for Your Order!</h2>
+        <p class="lead">Your order has been placed successfully.</p>
+        <p>You will receive a confirmation email shortly (if implemented).</p>
+
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Continue Shopping</a>
+    </div>
+</div>
+{% endblock %}

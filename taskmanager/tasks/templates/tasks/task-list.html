@@ -42,7 +42,7 @@
                 <em>(completed)</em>
             {% endif %}
             <br>
-            <p> Due date: {{task.due_date | default:"No due date"}} </p>
+            <p class="duedate"> Due date: {{task.due_date | default:"No due date"}} </p>
             <br>
             <a href="{% url "task-edit" task.pk %}"><button class="icon-btn edit" title="Edit">✏️</button></a>
             <a href="{% url "task-delete" task.pk%}"><button class="icon-btn delete" title="Delete">🗑️</button></a>

@@ -1,0 +1,40 @@
+{% extends "store/base.html" %}
+
+
+
+
+
+
+{% block content %}
+<div class="container-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow p-4">
+                <h2 class="text-center mb-4">Checkout</h2>
+
+                <ul class="list-group mb-4">
+                    {% for item in items %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ item.product.name }} <small>(x{{ item.quantity }})</small></span>
+                        <span>${{ item.product.price|floatformat:2 }}</span>
+                    </li>
+                    {% endfor %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <strong>Total:</strong>
+                        <strong>${{ total_price|floatformat:2 }}</strong>
+                    </li>
+                </ul>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Shipping Address</label>
+                        <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3 w-100">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

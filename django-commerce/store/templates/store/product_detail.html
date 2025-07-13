@@ -1,0 +1,69 @@
+{% extends "store/base.html" %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row gy-5 align-items-start">
+
+    <!-- Product Image -->
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 p-4">
+        <img src="{{ product.image.url }}" 
+             class="card-img-top img-fluid rounded" 
+             alt="{{ product.name }}" 
+             style="max-height: 450px; object-fit: contain;">
+      </div>
+    </div>
+
+    <!-- Product Details & Add to Cart -->
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 p-4">
+        <div class="card-body">
+          <span class="badge bg-secondary mb-2">{{ product.category }}</span>
+
+          <h2 class="card-title fw-bold">{{ product.name }}</h2>
+
+          <h4 class="text-danger mt-2">${{ product.price }}</h4>
+
+          <hr class="my-4">
+
+          <!-- Add to Cart Form -->
+          <form method="POST" action="{% url 'add_to_cart' product.pk %}">
+            {% csrf_token %}
+
+            <!-- Color Selection -->
+            {% if product.colors.all %}
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Color</label>
+                <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                  {% for color in product.colors.all %}
+                    <input type="radio" class="btn-check" name="color" id="color-{{ forloop.counter }}" value="{{ color.name }}" autocomplete="off" required>
+                    <label class="btn btn-outline-primary" for="color-{{ forloop.counter }}">{{ color.name }}</label>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            <!-- Size Selection -->
+            {% if product.sizes.all %}
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Size</label>
+                <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                  {% for size in product.sizes.all %}
+                    <input type="radio" class="btn-check" name="size" id="size-{{ forloop.counter }}" value="{{ size.size }}" autocomplete="off" required>
+                    <label class="btn btn-outline-secondary" for="size-{{ forloop.counter }}">{{ size.size }}</label>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100 mt-2">Add to Cart</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

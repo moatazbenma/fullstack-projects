@@ -8,10 +8,10 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Task Manager</div>
+        <a class="logo" href="{% url "task-list" %}">Task Manager</a>
         <div class="nav-links">
         {% if user.is_authenticated %}
-                Hello, {{user.username}}! |
+        <a href="#" class="user-info">Hello, <span class="username">{{ user.username }}</span></a>
                 <a href="{% url "task-list" %}">Tasks</a>
                 <a href="{% url "about_us"%}">About Us</a>
                 <a href="{% url "logout" %}">Log Out</a>

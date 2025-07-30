@@ -36,7 +36,7 @@ A full-featured Django web application for managing events. Users can register, 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/django-events.git
+git clone https://github.com/moatazbenma/django-events.git
 cd django-events
 
 

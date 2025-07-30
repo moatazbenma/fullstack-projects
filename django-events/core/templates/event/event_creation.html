@@ -1,0 +1,24 @@
+{% extends "event/base_events.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="card shadow-lg p-5  w-100 mb-4" style="max-width: 650px;border-radius: 1rem;">
+    <h2 class="text-center mb-4">Create an Event</h2>
+
+<form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="text-danger small mt-1">{{ field.errors|striptags }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary w-100">Create Event</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

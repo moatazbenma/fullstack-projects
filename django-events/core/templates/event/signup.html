@@ -1,0 +1,21 @@
+{% extends "event/base_events.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+<div class="card p-5 m-5" style="">
+    <form class="formsignup" method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+ </div>
+
+
+{% endblock content %}

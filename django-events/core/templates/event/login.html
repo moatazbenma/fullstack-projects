@@ -1,0 +1,16 @@
+{% extends "event/base_events.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-5 shadow-lg" style="width: 400px; border-radius: 1rem;">
+        <form class="formlogin" method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Log In</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

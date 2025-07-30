@@ -21,7 +21,13 @@ A full-featured Django web application for managing events. Users can register, 
 - **Backend:** Django (Python)
 - **Frontend:** HTML, Bootstrap 5
 - **Database:** SQLite (default for development)
-- **Media:** Django File Uploads for images
+- **Media:** Django File Uploads for images:
+- ![Login](screenshots/login.jpeg)
+- ![Dashboard](screenshots/Dashboard.jpeg)
+- ![List Events](screenshots/List_Events.jpeg)
+- ![Registered_Events](screenshots/Registered_Events.jpeg)
+- ![Event Detail](screenshots/Event_detail.jpeg)
+- ![Unregister](screenshots/Unregister.jpeg)
 
 ---
 

@@ -1,0 +1,45 @@
+/* General styling */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* Dashboard card */
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 12px;
+}
+
+/* Rewards section */
+.rewards-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.reward {
+  flex: 1 1 200px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.reward:hover {
+  transform: translateY(-5px);
+  background-color: #e3f2fd;
+}
+
+/* Footer fix */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}

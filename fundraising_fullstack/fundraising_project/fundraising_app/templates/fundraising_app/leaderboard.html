@@ -1,0 +1,28 @@
+{% extends 'fundraising_app/base.html' %}
+
+{% block title %}Leaderboard{% endblock %}
+
+{% block content %}
+  <h2 class="mb-4">🏆 Top Intern Fundraisers</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-primary">
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Referral Code</th>
+        <th>Amount Raised</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in leaders %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.referral_code }}</td>
+        <td>${{ person.amount }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -83,8 +83,8 @@ This project is licensed under the MIT License.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/court-case-dashboard.git
-cd court-case-dashboard
+git clone https://github.com/moatazbenma/fullstack-projects.git
+cd court_projects
 
 # 2. Create and activate virtual environment
 python -m venv env

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: fundraising-web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn fundraising_project.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: fundraising_project.settings
+    build:
+      # 👇 This is what changes the working directory during build & deploy
+      context: fundraising_project

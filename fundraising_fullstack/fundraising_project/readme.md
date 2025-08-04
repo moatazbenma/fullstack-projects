@@ -58,7 +58,7 @@ python manage.py migrate
 python manage.py runserver
 
 
-
 ## 📌 Author
-Your Name — [@moatazbenma](https://github.com/moatazbenma)
+
+[@moatazbenma](https://github.com/moatazbenma)
 

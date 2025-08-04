@@ -28,12 +28,12 @@ A full-stack web application built for internship Task 1 to manage fundraising c
 - Responsive design
 
 ## 📸 Screenshots
-![Dashboard](screenshots/dashboard.jpeg)
-![leaderboard](screenshots/leaderboard.jpeg)
-![login](screenshots/login.jpeg)
-![signup](screenshots/signup.jpeg)
-![responsive dashboard](screenshots/dashboard_responsive.jpeg)
-![responsive login](screenshots/login_responsive.jpeg)
+![Dashboard](Screenshots/dashboard.jpeg)
+![leaderboard](Screenshots/leaderboard.jpeg)
+![login](Screenshots/login.jpeg)
+![signup](Screenshots/signup.jpeg)
+![responsive dashboard](Screenshots/dashboard_responsive.jpeg)
+![responsive login](Screenshots/login_responsive.jpeg)
 
 
 
